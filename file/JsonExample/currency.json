@@ -1,0 +1,18 @@
+{"errors": {},
+    "id": 4605041,
+    "source_code": "QUANDL",
+    "source_name": "Quandl",
+    "code": "EURUSD",
+    "name": "Currency Exchange Rates - EUR vs USD",
+    "urlize_name": "Currency-Exchange-Rates-EUR-vs-USD",
+    "description": "This exchange rate shows the value of 1 Euro in U.S. Dollars. This exchange rate is an amalgamation of rates from multiple sources.  These include exchanges, brokerages, newspapers and central bank sources. High and Low rates are crudely estimated.",
+    "updated_at": "2014-08-31T00:44:41.300Z",
+    "frequency": "daily",
+    "from_date": "1999-09-06",
+    "to_date": "2014-08-29",
+    "column_names": ["Date", "Rate", "High (est)", "Low (est)"],
+    "private": false,
+    "type": null,
+    "display_url": "http://quandl.com",
+    "premium": false
+}

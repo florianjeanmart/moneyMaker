@@ -1,0 +1,41 @@
+// http://www.quandl.com/api/v2/datasets.json?query=*&source_code=GOOG
+{"total_count": 72390, "current_page": 1, "per_page": 300, "docs": [
+    {
+        "id": 2318865,
+        "source_id": 393,
+        "source_code": "GOOG",
+        "code": "NASDAQ_AAPL",
+        "name": "Apple Inc. (AAPL)",
+        "urlize_name": "Apple-Inc-AAPL",
+        "description": "Apple Inc. (Apple) designs, manufactures and markets mobile communication and media devices, personal computers, and portable digital music players, and a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications. The Company's products and services include iPhone, iPad, Mac, iPod, Apple TV, a portfolio of consumer and professional software applications, the iOS and OS X operating systems, iCloud, and a variety of accessory, service and support offerings. The Company also delivers digital content and applications through the iTunes Store, App StoreSM, iBookstoreSM, and Mac App Store. The Company distributes its products worldwide through its retail stores, online stores, and direct sales force, as well as through third-party cellular network carriers, wholesalers, retailers, and value-added resellers. In February 2012, the Company acquired app-search engine Chomp.",
+        "updated_at": "2014-08-31T08:24:41.102Z",
+        "created_at": "2012-09-11T02:26:55.585Z",
+        "frequency": "daily",
+        "display_url": "http://www.google.com/finance/historical?q=NASDAQ%3AAAPL&startdate=Jan+1%2C+1990&output=csv",
+        "from_date": "1980-12-12",
+        "to_date": "2014-08-29",
+        "column_names": ["Date", "Open", "High", "Low", "Close", "Volume"],
+        "private": false,
+        "type": null,
+        "premium": false
+    },
+    {
+        "id": 2326444,
+        "source_id": 393,
+        "source_code": "GOOG",
+        "code": "NASDAQ_FB",
+        "name": "Facebook Inc (FB)",
+        "urlize_name": "Facebook-Inc-FB",
+        "description": "<p>Facebook, Inc. (Facebook) is engaged in building products to create utility for users, developers, and advertisers. People use Facebook to stay connected with their friends and family, to discover what is going on in the world around them, and to share and express what matters to them to the people they care about. Developers can use the Facebook Platform to build applications and Websites that integrate with Facebook to reach its global network of users and to build personalized and social products. Advertisers can engage with more than 900 million monthly active users (MAUs) on Facebook or subsets of its users based on information they have chosen to share with the Company, such as their age, location, gender, or interests. In September 2013, Mail.Ru Group Limited sold its remaining shares in Facebook Inc. Effective September 25, 2013, Facebook Inc acquired Mobile Technologies, a developer of online applications. In October 2013, Facebook Inc acquired Onavo Inc.</p>\n<p></p>\n",
+        "updated_at": "2014-08-31T17:24:21.324Z",
+        "created_at": "2012-09-11T13:14:10.518Z",
+        "frequency": "daily",
+        "display_url": "http://www.google.com/finance/historical?q=NASDAQ%3AFB&startdate=Jan+1%2C+1990&output=csv",
+        "from_date": "2012-05-17",
+        "to_date": "2014-08-29",
+        "column_names": ["Date", "Open", "High", "Low", "Close", "Volume"],
+        "private": false,
+        "type": null,
+        "premium": false
+    }
+]}

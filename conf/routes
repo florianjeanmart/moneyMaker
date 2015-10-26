@@ -1,0 +1,47 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+#
+# Home page
+#
+GET     /                                              @be.moneyMaker.controllers.ApplicationController.index()
+GET     /test                                          @be.moneyMaker.controllers.ApplicationController.test()
+
+#
+# Map static resources from the /public folder to the /assets URL path
+#
+GET     /assets/*file                                  controllers.Assets.at(path="/public", file)
+
+#
+# Stocks routes
+#
+GET /stock/get/:code                                   @be.moneyMaker.controllers.StockController.getStock(code: String)
+GET /stock/page/:name/:first/:maxResult                @be.moneyMaker.controllers.StockController.getStocks(name: String, first:Integer,maxResult:Integer)
+GET /stock/autoCompletion/:content                     @be.moneyMaker.controllers.StockController.getStocksByAutoCompletion(content: String)
+GET /stock/values/:stockCode                           @be.moneyMaker.controllers.StockController.getValues(stockCode: String)
+GET /stock/loading                                     @be.moneyMaker.controllers.StockController.initialization()
+GET /stock/historic                                    @be.moneyMaker.controllers.StockController.getHistoric()
+
+
+#
+# Currency routes
+#
+GET /currency/all                                      @be.moneyMaker.controllers.CurrencyController.getAll()
+GET /currency/values/:reference/:currency              @be.moneyMaker.controllers.CurrencyController.getValues(reference: String, currency: String)
+GET /currency/value/:reference/:currency/:date         @be.moneyMaker.controllers.CurrencyController.getValue(reference: String, currency: String, date: Long)
+POST /currency/create                                  @be.moneyMaker.controllers.CurrencyController.createCurrency()
+
+#
+# share routes
+#
+GET /share/myShares                                    @be.moneyMaker.controllers.ShareController.getMyShares()
+POST /share/create                                     @be.moneyMaker.controllers.ShareController.createShare()
+POST /share/edit                                       @be.moneyMaker.controllers.ShareController.editShare()
+POST /share/remove                                     @be.moneyMaker.controllers.ShareController.removeShare()
+POST /share/sell                                       @be.moneyMaker.controllers.ShareController.sellShare()
+
+#
+# FIX route
+#
+GET /fix/1                                              @be.moneyMaker.controllers.FixController.fix1()

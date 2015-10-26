@@ -1,0 +1,30 @@
+div
+    h1 Stock
+    button(ng-click="loadStocks()") LOAD STOCK
+    table
+        tr
+            td
+                .field_form(style="width:400px")
+                    mm-field-auto-completion(ng-info="stock")
+            td
+                table
+                    tr(ng-repeat="stock in stocks")
+                        td
+                            {{stock.stock.symbol}}
+                        td
+                            button(ng-click="removeStock(stock.stock.symbol)") remove
+    div Percentage ?
+        input(type="checkbox", ng-model="isCompare")
+    div(style="100%")
+        div(style="display:inline-block; width: calc(100% - 200px); vertical-align : top")
+            div(id="{{id}}",style="height: 700px; min-width: 310px",class="chart")
+        div(style="display:inline-block;width:200px;vertical-align : top")
+            table.table
+                tr
+                    th(colspan=2) Historic visit
+                tr
+                    th Name
+                    th last visit
+                tr(ng-repeat="stock in historic.list", ng-click="loadStock(stock.stockDTO.symbol)")
+                    td {{stock.stockDTO.symbol}}
+                    td {{stock.lastVisit | date}}

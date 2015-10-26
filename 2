@@ -1,0 +1,28 @@
+import sbt.ExclusionRule
+
+name := "awac"
+
+version := "1.0-SNAPSHOT"
+
+libraryDependencies ++= Seq(
+  javaCore,
+  javaJpa,
+  javaJdbc,
+  cache,
+  "com.google.inject" % "guice" % "3.0" % "test",
+  "net.sf.ehcache" % "ehcache" % "2.7.2"
+)
+
+libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.18"
+
+libraryDependencies += "com.google.code.maven-play-plugin.com.github.yeungda.jcoffeescript" % "jcoffeescript" % "1.0"
+
+libraryDependencies += "de.neuland-bfi" % "jade4j" % "0.4.0"
+
+libraryDependencies += "org.apache.commons" % "commons-lang3" % "3.1"
+
+libraryDependencies += "com.liferay" % "org.apache.commons.fileupload" % "1.2.2.LIFERAY-PATCHED-1"
+
+libraryDependencies += "org.jadira.usertype" % "usertype.core" % "3.2.0.GA" excludeAll (
+  ExclusionRule(organization = "org.hibernate")
+  )

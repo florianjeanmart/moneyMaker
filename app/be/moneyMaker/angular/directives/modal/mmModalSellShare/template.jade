@@ -1,0 +1,30 @@
+// Modal
+.modal(ng-enter="save()",ng-escape="close()")
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button.button(type="button",ng-click="close()")
+                    span(aria-hidden="true") &times;
+                    span(class="sr-only") Close
+                h4(class="modal-title") Sell share {{getParams().share.stock.symbol}}
+
+            .modal-body
+                .field_form
+                    mm-field-date(ng-info="fields.date")
+                    mm-field-text(ng-info="fields.price")
+
+                .modal-footer
+
+                div(ng-hide="isLoading")
+                    button.button(type="button",
+                    class="btn btn-primary",
+                    ng-click="close();") Cancel
+
+                    button.button(type="button",
+                    class="btn btn-primary",
+                    ng-click="save();",
+                    ng-disabled="!allFieldValid()") Save
+
+                img(ng-show="isLoading",src="/assets/images/modal-loading.gif")
+
+

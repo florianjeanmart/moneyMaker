@@ -1,0 +1,20 @@
+{"errors": {},
+    "id": 2318865,
+    "source_code": "GOOG",
+    "source_name": "Google Finance",
+    "code": "NASDAQ_AAPL",
+    "name": "Apple Inc. (AAPL)",
+    "urlize_name": "Apple-Inc-AAPL",
+    "description": "Apple Inc. (Apple) designs, manufactures and markets mobile communication and media devices, personal computers, and portable digital music players, and a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications. The Company's products and services include iPhone, iPad, Mac, iPod, Apple TV, a portfolio of consumer and professional software applications, the iOS and OS X operating systems, iCloud, and a variety of accessory, service and support offerings. The Company also delivers digital content and applications through the iTunes Store, App StoreSM, iBookstoreSM, and Mac App Store. The Company distributes its products worldwide through its retail stores, online stores, and direct sales force, as well as through third-party cellular network carriers, wholesalers, retailers, and value-added resellers. In February 2012, the Company acquired app-search engine Chomp.",
+    "updated_at": "2014-09-04T02:05:50.970Z",
+    "frequency": "daily",
+    "from_date": "1980-12-12",
+    "to_date": "2014-09-03",
+    "column_names": ["Date", "Open", "High", "Low", "Close", "Volume"],
+    "private": false,
+    "type": null,
+    "display_url": "http://www.google.com/finance/historical?q=NASDAQ%3AAAPL&startdate=Jan+1%2C+1990&output=csv",
+    "premium": false,
+    "data": [
+        ["2014-09-03", 103.1, 103.2, 98.58, 98.94, 125420521.0]
+    ]}

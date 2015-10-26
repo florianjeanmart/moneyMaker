@@ -1,0 +1,43 @@
+{
+    "name": "awac",
+    "version": "0.0.0",
+    "homepage": "",
+    "authors": [
+        "moneyMaker"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "public/components"
+    ],
+    "dependencies": {
+        "angular": "*",
+        "angular-animate": "*",
+        "angular-bootstrap": "*",
+        "angular-dynamic-locale": "*",
+        "angular-flash": "*",
+        "angular-i18n": "*",
+        "angular-route": "*",
+        "angular-sanitize": "*",
+        "ng-file-upload": "*",
+        "bootstrap": "*",
+        "jquery": "2.1.*",
+        "raphael": "*",
+        "graphael": "*",
+        "underscore": "*",
+        "messenger": "*",
+        "chartjs": ">=1.0.1-beta.4",
+        "tinycolor": "~1.0.0",
+        "angular-charts": "~0.2.5",
+        "d3": "~3.3.10",
+        "highcharts": "~4.0.3",
+        "ng-table": "~0.3.3",
+        "highstock": "https://github.com/highslide-software/highstock-release.git#~2.0.4",
+        "angucomplete": "*",
+        "angular-bootstrap-datetimepicker": "~0.2.4",
+        "momentjs": "~2.8.3"
+    }
+}

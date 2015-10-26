@@ -1,0 +1,124 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <title>AWAC</title>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- JAVASCRIPTS                                                        -->
+    <!-- ------------------------------------------------------------------ -->
+
+
+    <!-- jQuery -->
+    <script src='@routes.Assets.at("components/jquery/dist/jquery.min.js")'></script>
+
+    <!-- Angular dependencies local -->
+    <script src='@routes.Assets.at("components/angular/angular.js")'></script>
+    <script src='@routes.Assets.at("components/angular-i18n/angular-locale_fr-fr.js")'></script>
+    <script src='@routes.Assets.at("components/angular-animate/angular-animate.min.js")'></script>
+    <script src='@routes.Assets.at("components/angular-sanitize/angular-sanitize.min.js")'></script>
+    <script src='@routes.Assets.at("components/angular-route/angular-route.min.js")'></script>
+    <script src='@routes.Assets.at("components/angular-bootstrap/ui-bootstrap-tpls.min.js")'></script>
+    <script src='@routes.Assets.at("components/angular-flash/dist/angular-flash.min.js")'></script>
+    <script src='@routes.Assets.at("components/angular-dynamic-locale/src/tmhDynamicLocale.js")'></script>
+
+
+    <!-- Bootstrap -->
+    <script src='@routes.Assets.at("components/momentjs/moment.js")'></script>
+    <script src='@routes.Assets.at("components/bootstrap/dist/js/bootstrap.min.js")'></script>
+    <script src='@routes.Assets.at("components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js")'></script>
+
+    <!-- Messenger -->
+    <script src='@routes.Assets.at("components/messenger/build/js/messenger.min.js")'></script>
+    <script src='@routes.Assets.at("components/messenger/build/js/messenger-theme-flat.js")'></script>
+
+    <!-- ChartJS -->
+    <script src='@routes.Assets.at("components/chartjs/Chart.min.js")'></script>
+
+    <!-- web app -->
+    <script src='@routes.Assets.at("javascripts/app.js")'></script>
+
+    <!-- d3 -->
+    <script src='@routes.Assets.at("components/d3/d3.min.js")'></script>
+
+    <!-- highcharts
+    <script src='@routes.Assets.at("components/highcharts/highcharts.js")'></script>-->
+    <script src='@routes.Assets.at("components/highstock/highstock.js")'></script>
+   <!-- <script src='@routes.Assets.at("components/highcharts/highcharts-all.js")'></script>-->
+    <!-- <script src='@routes.Assets.at("components/highcharts/modules/exporting.js")'></script> -->
+
+    <!--    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+    -->
+
+    <!-- angucomplete -->
+    <script src='@routes.Assets.at("components/angucomplete/angucomplete.js")'></script>
+
+    <!-- ng-table -->
+    <script src='@routes.Assets.at("components/ng-table/ng-table.min.js")'></script>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- STYLES                                                             -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href='@routes.Assets.at("components/bootstrap/dist/css/bootstrap.min.css")'>
+    <link rel="stylesheet" media="screen" href='@routes.Assets.at("components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css")'>
+
+    <!-- Messenger -->
+    <link rel="stylesheet" media="screen" href='@routes.Assets.at("components/messenger/build/css/messenger.css")'>
+    <link rel="stylesheet" media="screen" href='@routes.Assets.at("components/messenger/build/css/messenger-theme-flat.css")'>
+    <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/messenger-theme.css")'>
+
+    <!-- Main (hacks) -->
+    <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/main.css")'>
+
+    <!-- angucomplete -->
+    <link rel="stylesheet" media="screen" href='@routes.Assets.at("components/angucomplete/angucomplete.css")'>
+
+    <!-- ng-table -->
+    <link rel="stylesheet" media="screen" href='@routes.Assets.at("components/ng-table/ng-table.min.css")'>
+
+    <!-- Messenger and Developer's helper for translations -->
+    <script>
+        Messenger.options = {
+            extraClasses: 'messenger-fixed messenger-on-top',
+            theme: 'flat'
+        }
+
+        $(function () {
+            $('body').keydown(function (evt) {
+                // console.log(evt);
+                if (evt.which == 190 && evt.ctrlKey && evt.shiftKey && evt.altKey) {
+                    if (window.debug) {
+                        window.debug = false;
+                        $('.translation-code').remove();
+                    } else {
+                        window.debug = true;
+                        $('.translated-text').each(function () {
+                            var e = $('<span class="translation-code">' + $(this).data('code') + '</span>')
+                            $(this).append(e)
+                        })
+                    }
+                }
+            })
+        });
+    </script>
+
+
+</head>
+<body ng-controller="MainCtrl">
+
+    <!-- background for modal -->
+    <div class="modal-background" ng-show="$root.displayModalBackground">
+    </div>
+
+    <!-- modal manager -->
+    <mm-modal-manager></mm-modal-manager>
+
+
+    <mm-welcome></mm-welcome>
+
+</body>
+</html>
+
+
+

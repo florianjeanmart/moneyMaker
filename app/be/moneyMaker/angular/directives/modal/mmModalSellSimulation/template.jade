@@ -1,0 +1,43 @@
+// Modal
+.modal(ng-enter="simulation()",ng-escape="close()")
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button.button(type="button",ng-click="close()")
+                    span(aria-hidden="true") &times;
+                    span(class="sr-only") Close
+                h4(class="modal-title") Create share
+
+            .modal-body
+                .field_form
+                    .field_row
+                        div Buy
+                        div
+                            input(type="checkbox", ng-model="buy")
+                    mm-field-auto-completion(ng-info="fields.stock")
+                    mm-field-date(ng-info="fields.date")
+                    mm-field-text(ng-info="fields.nb")
+                    mm-field-text(ng-info="fields.buyPrice")
+                    mm-field-text(ng-info="fields.sellPrice")
+                    mm-field-text(ng-info="fieldsResult.totalCurrency")
+                    mm-field-text(ng-info="fieldsResult.exchangeRate")
+                    mm-field-text(ng-info="fieldsResult.price")
+                    mm-field-text(ng-info="fieldsResult.tax")
+                    mm-field-text(ng-info="fieldsResult.value")
+                    mm-field-text(ng-info="fieldsResult.percentCost")
+
+                .modal-footer
+
+                div(ng-hide="isLoading")
+                    button.button(type="button",
+                    class="btn btn-primary",
+                    ng-click="close();") Cancel
+
+                    button.button(type="button",
+                    class="btn btn-primary",
+                    ng-click="simulation();",
+                    ng-disabled="!allFieldValid()") Simulate
+
+                img(ng-show="isLoading",src="/assets/images/modal-loading.gif")
+
+

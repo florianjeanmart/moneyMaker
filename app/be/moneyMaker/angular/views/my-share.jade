@@ -1,0 +1,94 @@
+div
+    h1 My share
+    div
+        button(ng-click="createMyShare()") Add a new share
+        button(ng-click="sellSimulation()") Sell somulation
+
+    div
+        div
+            a(ng-click="showAll()") show all
+            span /
+            a(ng-click="hideAll()") hide all
+        div.my-share-table(loading-container='tableParams.settings().$loading')
+            table.admin-table-import-bad(ng-table='tableParams')
+                tr(ng-repeat='share in $data')
+                    td(data-title="''")
+                        input(type="checkbox", ng-model="share.visible",ng-click="setVisibleChart(share)")
+                    td(data-title='\'Stock\'', sortable='\'stock.code\'')
+                        | {{share.stock.symbol}}
+                    td(data-title='\'Date\'', sortable='\'buyDate\'')
+                        | {{share.buyDate | date}}
+                    td(data-title='\'Value\'',  style="text-align:right")
+                        | {{share.buyPrice | numberToI18N}}
+                    td(data-title='\'Number\'',  style="text-align:right")
+                        | {{share.nbShare | numberToI18N}}
+                    td(data-title='\'Total (€)\'', sortable='\'totalEur\'', style="text-align:right;border-right: 3px double #bbb;")
+                        | {{share.totalEur | numberToI18N}}
+                        .question_info
+                            .question_info_popup
+                                div(ng-repeat="(key, value) in share.totalEurDetails")
+                                    div(style="display:inline-block;width:50%") {{key}}
+                                    div(style="display:inline-block;width:50%;text-align:right") {{value | numberToI18N: 4 }}
+
+                    td(data-title='\'Sell Date\'', sortable='\'sellDate\'')
+                        | {{share.sellDate | date}}
+                    td(data-title='\'Sell Value\'', style="text-align:right")
+                        | {{share.sellPrice | numberToI18N}}
+                    td(data-title='\'Sell Total (€)\'', sortable='\'sellTotalEur\'', style="text-align:right;border-right: 3px double #bbb;")
+                        | {{share.sellTotalEur | numberToI18N}}
+                        .question_info
+                            .question_info_popup
+                                div(ng-repeat="(key, value) in share.totalSellEurDetails")
+                                    div(style="display:inline-block;width:50%") {{key}}
+                                    div(style="display:inline-block;width:50%;text-align:right") {{value | numberToI18N: 4 }}
+
+                    td(data-title='\'Difference (€)\'', sortable='\'differenceEur\'', style="text-align:right")
+                        | {{share.differenceEur | numberToI18N}}
+                    td(data-title='\'Difference % (€)\'', sortable='\'differencePercentEur\'', style="text-align:right")
+                        | {{share.differencePercentEur | numberToI18N}} %
+                    td(data-title='\'Average % (€)\'', sortable='\'differencePercentEurAverageByDay\'', style="text-align:right")
+                        | {{share.differencePercentEurAverageByDay | numberToI18N}} %
+                    td(data-title='\'Opts\'', style="text-align:left")
+                        button(ng-click="sellSimulation(share)",class="glyphicon glyphicon-file")
+                        button(ng-click="editShare(share)",class="glyphicon glyphicon-pencil")
+                        button(ng-show="share.sellPrice == null",class="glyphicon glyphicon-ok-sign",ng-click="sellShare(share)")
+                        button(ng-click="remove(share)",class="glyphicon glyphicon-remove")
+
+        div.my-share-table
+            table
+                tr
+                    th(colspan=2) Summary
+                tr
+                    td Total
+                    td {{summary.value | numberToI18N}}
+                tr
+                    td average %
+                    td {{averagePercentSell| numberToI18N}} %
+
+
+
+    div
+        input(type="checkbox", ng-model="isCompare")
+        div Percentage ?
+
+    tabSet
+        tab
+            tab-heading
+                span stock value
+            div
+                div(id="{{idChartStock}}",style="height: 700px; min-width: 310px",class="chart")
+        tab
+            tab-heading
+                span shares value
+            div
+                div(id="{{idChartShare}}",style="height: 700px; min-width: 310px",class="chart")
+        tab
+            tab-heading
+                span Results
+            div
+                div(id="{{idChartResult}}",style="height: 700px; min-width: 310px",class="chart")
+        tab
+            tab-heading
+                span Results average by day
+            div
+                div(id="{{idChartResultAverage}}",style="height: 700px; min-width: 310px",class="chart")

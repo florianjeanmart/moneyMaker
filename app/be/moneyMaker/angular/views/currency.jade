@@ -1,0 +1,8 @@
+div
+    h1 Currency
+    span Reference
+    select(ng-options='c as c.name for c in currencies', ng-model="reference")
+    span Currency
+    select(ng-options='c as c.name for c in currencies', ng-model="currency")
+    br
+    mm-chart-area(ng-data="chartData")

@@ -1,0 +1,14 @@
+div je suis la directive table
+    button.btn.btn-default(ng-click='tableParams.reload()') Reload
+    button.btn.btn-default(ng-click='tableParams.sorting({})') Clear sorting
+        .clearfix
+        div(loading-container='tableParams.settings().$loading')
+            table.table(ng-table='tableParams', show-filter='true')
+                tbody
+                    tr(ng-repeat='stock in $data')
+                        td(data-title='\'Name\'', filter='{ \'name\': \'text\' }', sortable='name')
+                            | {{stock.name}}
+                            | {{$loading}}
+                        td(data-title='\'Code\'', sortable='code')
+                            | {{stock.code}}
+
